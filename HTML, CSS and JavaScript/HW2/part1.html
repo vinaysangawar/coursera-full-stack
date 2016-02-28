@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Guessing Game - Part 1</title>
+    <meta name="Color Guessing Game - Part 1" content="Vinay Sangawar">
+</head>
+
+<body onload="do_game()">
+    <script>
+        var color = ["aqua", "black", "blue", "cyan", "green", "lime", "magenta", "orange", "red", "white", "yellow"];
+        var finished = false;
+        var target_color;
+        var guess_counts = 0;
+        var guess_color;
+
+        function do_game() {
+
+            var random_number = Math.random() * color.length;
+            var random_number_integer = Math.floor(random_number);
+            target_color = color[random_number_integer];
+            alert("The chosen color is " + target_color);
+            do {
+                guess_color = prompt("I am thinking of one of these colors: \n\naqua, black, blue, cyan, green, lime, magenta, orange, red, white, yellow \n\nWhat color am I thinking of?");
+                guess_counts += 1;
+            } while(guess_color != target_color )
+        }
+
+    </script>
+
+</body>
+
+
+</html>

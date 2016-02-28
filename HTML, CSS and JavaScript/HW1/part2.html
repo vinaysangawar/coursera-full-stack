@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Part 2</title>
+  <meta name="Dating Website Part 2" content="Vinay Sangawar">
+  <style>
+    fieldset {
+        background: lightyellow;
+        border: 10px solid yellow;
+        margin-bottom: 10px;
+        width: 720px;
+    }
+
+    label {
+        width: 180px;
+        display: inline-block;
+        text-align: right;
+        vertical-align: top;
+    }
+
+    textarea {
+        width: 360px;
+        height: 50px;
+    }
+
+    span {
+        width: 40px;
+        display: inline-block;
+    }
+
+    .classAuto {
+        width: auto;
+    }
+
+    .lowerRange {
+        background-color: red;
+        color: white;
+        text-align: center;
+        padding: 3px;
+       }
+
+    .higherRange {
+        background-color: purple;
+        color: white;
+        text-align: center;
+        padding: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Please Enter Your Details For Our Dating Website!</h1>
+  <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php"
+      enctype="multipart/form-data" method="post">
+
+    <fieldset>
+      <legend>Your Face</legend>
+
+        <label for="avatar">Your image:</label>
+        <input type="file" name="avatar" required>
+        <br>
+
+        <label for="preview">Image Preview:</label>
+        <img id="preview" name="preview">
+
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>Your General Details</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="Male" id="m" required><label class="classAuto" for="m">Male</label>
+        <input type="radio" name="gender" value="Femail" id="f"><label class="classAuto" for="f">Female</label>
+        <br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" required>
+        <br>
+
+        <label for="date">Date of Birth:</label>
+        <input type="date" name="date">
+        <br>
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" name="color">
+        <br>
+
+        <label for="country">Country:</label>
+        <select name="country">
+            <option value="none"></option>
+            <option value="us">United States</option>
+            <option value="mx">Mexico</option>
+            <option value="cn">Canada</option>
+            <option value="in">India</option>
+            <option value="cn">China</option>
+        </select>
+
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>Your Indicators</legend>
+
+          <label for="height">Height: </label>
+          <span class="lowerRange"> Short </span>
+          <input type="range" min="0" max="100" step="5" name="height" value="50"> <span class="higherRange"> Tall </span>
+          <br>
+
+          <label for="salary">Salary: </label>
+          <span class="lowerRange"> Poor </span>
+          <input type="range" min="0" max="100" step="5" name="salary" value="50"> <span class="higherRange"> Rich </span>
+          <br>
+
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>Your Contact Information</legend>
+
+        <label for="email">Email:</label>
+        <input name="email" type="email" required>
+        <br>
+
+        <label for="tel">Mobile:</label>
+        <input name="tel" type="tel">
+        <br>
+
+        <label for="address">Address:</label>
+        <textarea name="address"></textarea>
+        <br>
+
+        <label for="contact">Method to Contact You:</label>
+        <input type="checkbox" name="contact" id="email" value="Email"><label class="classAuto" for="email">Email</label>
+        <input type="checkbox" name="contact" id="whatsapp" value="WhatsApp"><label class="classAuto" for="whatsapp">WhatsApp</label>
+        <input type="checkbox" name="contact" id="chat" value="In-App Chat"><label class="classAuto" for="chat">In-App Chat</label>
+
+    </fieldset>
+
+    <input type="submit" value="Submit">
+
+  </form>
+
+  <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
+</html>

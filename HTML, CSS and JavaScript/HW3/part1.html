@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Matching Game</title>
+    <style>
+        #rightSide {
+            left: 500px;
+            border-left: 1px solid black;
+        }
+
+        img {
+            position: absolute;
+        }
+
+        div {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Matching Game</h2>
+    <p>Click on the extra smiling face on the left</p>
+
+    <div id="leftSide">
+
+    </div>
+    <div id="rightSide">
+
+    </div>
+
+    <script>
+        var theBody = document.getElementsByTagName("body")[0];
+
+        function randomNumber() {
+            return Math.random() * 400;
+        }
+
+        function nextLevel(event) {
+            event.stopPropagation();
+        }
+
+        function gameover() {
+            alert("Game Over!");
+            theBody.onclick = null;
+        }
+
+        function deleteAllChildren() {
+
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>
