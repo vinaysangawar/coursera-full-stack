@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
+
     <title>Ristorante Con Fusion</title>
-    
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    
+
+    <!-- Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link href="css/mystyles.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,7 +29,45 @@
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Ó" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
+            </div>
 
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"
+                       aria-hidden="true"></span> Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                         Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Appetizers</a></li>
+                            <li><a href="#">Main Courses</a></li>
+                            <li><a href="#">Desserts</a></li>
+                            <li><a href="#">Drinks</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Specials</li>
+                            <li><a href="#">Lunch Buffet</a></li>
+                            <li><a href="#">Weekend Brunch</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
     <header class="jumbotron">
 
         <!-- Main component for a primary marketing message or call to action -->
@@ -42,6 +85,7 @@
         </div>
     </header>
 
+    <!-- Main Body Container-->
     <div class="container">
         <div class="row row-content">
             <div class="col-xs-12 col-sm-3 col-sm-push-9">
@@ -51,7 +95,7 @@
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
                 <h2>Uthappizza</h2>
                 <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
-                <p><a  href="#">More &raquo;</a></p>
+                <p><a href="#">More &raquo;</a></p>
             </div>
         </div>
 
@@ -82,9 +126,10 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="row-footer">
         <div class="container">
-            <div class="row">             
+            <div class="row">
                 <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
@@ -100,19 +145,20 @@
 		              121, Clear Water Bay Road<br>
 		              Clear Water Bay, Kowloon<br>
 		              HONG KONG<br>
-		              Tel.: +852 1234 5678<br>
-		              Fax: +852 8765 4321<br>
-		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
+                  <i class="fa fa-phone"></i>: +852 1234 5678<br>
+    		          <i class="fa fa-fax"></i>: +852 8765 4321<br>
+    		          <i class="fa fa-envelope"></i>:
+                                     <a href="mailto:confusion@food.net">confusion@food.net</a>
 		           </address>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <div style="padding: 40px 10px;">
-                        <a href="http://google.com/+">Google+</a>
-                        <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
-                        <a href="http://www.linkedin.com/in/">LinkedIn</a>
-                        <a href="http://twitter.com/">Twitter</a>
-                        <a href="http://youtube.com/">YouTube</a>
-                        <a href="mailto:">Mail</a>
+                    <div class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
                     </div>
                 </div>
                 <div class="col-xs-12">
