@@ -1,0 +1,25 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/vinaysangawar/coursera-full-stack",
+  "authors": [
+    "Vinay Sangawar <vinaysangawar@gmail.com>"
+  ],
+  "description": "Website for conFusion restaurant",
+  "main": "index.html",
+  "keywords": [
+    "conFusion",
+    "Coursera"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}
