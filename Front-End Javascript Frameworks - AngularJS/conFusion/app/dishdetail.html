@@ -40,8 +40,20 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xs-9 col-xs-offset-1">
-                    <p>Put the comments here</p>
+<div>
+  <h4>Customer Comments</h4>
+</div>
+<div>
+  <blockquote ng-repeat="comments in dishDetailCtrl.dish.comments">
+      <p>{{comments.rating}}</p>
+      <p>{{comments.comment}}</p>
+      <footer>{{comments.author}}, {{comments.date | date}}
+      </footer>
+  </blockquote>
+</div>
+
                 </div>
             </div>
 
