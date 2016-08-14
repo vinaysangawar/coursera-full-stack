@@ -42,17 +42,28 @@
                 </div>
 
                 <div class="col-xs-9 col-xs-offset-1">
-<div>
-  <h4>Customer Comments</h4>
-</div>
-<div>
-  <blockquote ng-repeat="comments in dishDetailCtrl.dish.comments">
-      <p>{{comments.rating}}</p>
-      <p>{{comments.comment}}</p>
-      <footer>{{comments.author}}, {{comments.date | date}}
-      </footer>
-  </blockquote>
-</div>
+                    <div class="col-xs-12">
+                        <h4 class="col-xs-4">Customer Comments</h4>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-inline">
+                                <small>
+                                    <label for="sortby" class="col-xs-3 control-label">Sort by:</label>
+                                    <div>
+                                        <input type="text" class="col-xs-5 form-control input-sm" id="sortby" name="sortby" ng-model="commentFiltText">
+                                    </div>
+                                </small>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-12">
+                        <blockquote ng-repeat="comments in dishDetailCtrl.dish.comments | orderBy:commentFiltText">
+                            <p>{{comments.rating}}</p>
+                            <p>{{comments.comment}}</p>
+                            <footer>{{comments.author}},
+                                {{comments.date | date}}
+                            </footer>
+                        </blockquote>
+                    </div>
 
                 </div>
             </div>
