@@ -112,16 +112,16 @@ module.exports = function (grunt) {
         },
         watch: {
             copy: {
-                files: [ 'app/**', '!app/**/*.css', '!app/**/*.js'],
-                tasks: [ 'build' ]
+                files: ['app/**', '!app/**/*.css', '!app/**/*.js'],
+                tasks: ['build']
             },
             scripts: {
                 files: ['app/scripts/app.js'],
-                tasks:[ 'build']
+                tasks: ['build']
             },
             styles: {
                 files: ['app/styles/mystyles.css'],
-                tasks:['build']
+                tasks: ['build']
             },
             livereload: {
                 options: {
@@ -144,7 +144,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     open: true,
-                    base:{
+                    base: {
                         path: 'dist',
                         options: {
                             index: 'menu.html',
@@ -168,7 +168,7 @@ module.exports = function (grunt) {
         'usemin'
     ]);
 
-    grunt.registerTask('serve',['build','connect:dist','watch']);
+    grunt.registerTask('serve', ['build', 'connect:dist', 'watch']);
 
     grunt.registerTask('default', ['build']);
 
