@@ -18,8 +18,14 @@
     "gulp-rev": "^7.1.2",
     "gulp-uglify": "^2.0.0",
     "gulp-usemin": "^0.3.23",
+    "jasmine-core": "^2.5.0",
     "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "karma": "^1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs": "^2.1.7"
   },
   "engines": {
     "node": ">=0.10.0"

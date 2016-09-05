@@ -33,21 +33,12 @@ gulp.task('default', ['clean'], function () {
 });
 
 gulp.task('usemin', ['jshint'], function () {
-    var mainFiles = gulp.src('./app/*.html')
+    return gulp.src('./app//**/*.html')
         .pipe(usemin({
             css: [minifycss(), rev()],
             js: [ngannotate(), uglify(), rev()]
         }))
         .pipe(gulp.dest('dist/'));
-
-    var viewFiles = gulp.src('./app/views/*.html')
-        .pipe(usemin({
-            css: [minifycss(), rev()],
-            js: [ngannotate(), uglify(), rev()]
-        }))
-        .pipe(gulp.dest('dist/views/'));
-
-    return merge(mainFiles, viewFiles);
 });
 
 // Images

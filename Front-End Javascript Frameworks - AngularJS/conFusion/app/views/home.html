@@ -5,19 +5,21 @@
             <h3 align=center>Our Lipsmacking Culinary Creations</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <div class="media">
+            <div ng-if="!showDish">
+                <h3>{{message}}</h3>
+            </div>
+            <div class="media" ng-if="showDish">
                 <div class="media-left media-middle">
-                    <img class="media-object img-thumbnail" src={{featuredDish.image}} alt={{featuredDish.name}}>
+                    <img class="media-object img-thumbnail" src={{dish.image}} alt={{dish.name}}>
                 </div>
                 <div class="media-body">
-                    <h2 class="media-heading">{{featuredDish.name}} <span class="label label-danger">{{featuredDish.label}}</span>
-                        <span class="badge">{{featuredDish.price | currency}}</span></h2>
-                    <p>{{featuredDish.description}}</p>
+                    <h2 class="media-heading">{{dish.name}} <span class="label label-danger">{{dish.label}}</span>
+                        <span class="badge">{{dish.price | currency}}</span></h2>
+                    <p>{{dish.description}}</p>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="row row-content">
         <div class="col-xs-12 col-sm-3">
@@ -25,7 +27,10 @@
             <h3 align=center>This Month's Promotions</h3>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <div class="media-body">
+            <div ng-if="!showPromotion">
+                <h3>{{promotionMessage}}</h3>
+            </div>
+            <div class="media-body" ng-if="showPromotion">
                 <h2 class="media-heading">{{promotion.name}} <span class="label label-danger">{{promotion.label}}</span>
                     <span class="badge">{{promotion.price | currency}}</span>
                 </h2>
@@ -43,7 +48,10 @@
             <h3 align=center>Meet our Culinary Specialists</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <div class="media">
+            <div ng-if="!showExecutiveChef">
+                <h3>{{executiveChefMessage}}</h3>
+            </div>
+            <div class="media" ng-if="showExecutiveChef">
                 <div class="media-left media-middle">
                     <img class="media-object img-thumbnail" src={{executiveChef.image}} alt={{executiveChef.name}}>
                 </div>
