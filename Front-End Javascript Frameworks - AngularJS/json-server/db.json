@@ -210,6 +210,18 @@
     }
   ],
   "feedback": [
-
+    {
+      "mychannel": "tel",
+      "firstName": "test",
+      "lastName": "test",
+      "agree": true,
+      "email": "sdf@goma.com",
+      "tel": {
+        "areaCode": "193",
+        "number": "1939402"
+      },
+      "comments": "dfgdfg",
+      "id": 1
+    }
   ]
 }
