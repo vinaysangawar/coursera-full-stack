@@ -10,12 +10,12 @@
             </div>
             <div class="media" ng-if="showDish">
                 <div class="media-left media-middle">
-                    <img class="media-object img-thumbnail" src={{featuredDish.image}} alt={{featuredDish.name}}>
+                    <img class="media-object img-thumbnail" src={{dish.image}} alt={{dish.name}}>
                 </div>
                 <div class="media-body">
-                    <h2 class="media-heading">{{featuredDish.name}} <span class="label label-danger">{{featuredDish.label}}</span>
-                        <span class="badge">{{featuredDish.price | currency}}</span></h2>
-                    <p>{{featuredDish.description}}</p>
+                    <h2 class="media-heading">{{dish.name}} <span class="label label-danger">{{dish.label}}</span>
+                        <span class="badge">{{dish.price | currency}}</span></h2>
+                    <p>{{dish.description}}</p>
                 </div>
             </div>
         </div>
