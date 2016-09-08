@@ -37,11 +37,11 @@
                 </form>
             </div>
             <div class="col-xs-12">
-                <blockquote ng-repeat="comments in dish.comments | orderBy:commentFiltText">
-                    <p>{{comments.rating}}</p>
-                    <p>{{comments.comment}}</p>
-                    <footer>{{comments.author}},
-                        {{comments.date | date}}
+                <blockquote ng-repeat="comment in dish.comments | orderBy:commentFiltText">
+                    <p>{{comment.rating}}</p>
+                    <p>{{comment.comment}}</p>
+                    <footer>{{comment.author}},
+                        {{comment.date | date}}
                     </footer>
                 </blockquote>
             </div>
