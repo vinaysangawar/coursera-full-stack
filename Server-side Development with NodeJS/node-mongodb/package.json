@@ -1,0 +1,8 @@
+{
+  "name": "node-mongodb",
+  "version": "0.0.1",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mongodb": "^2.2.12"
+  }
+}
