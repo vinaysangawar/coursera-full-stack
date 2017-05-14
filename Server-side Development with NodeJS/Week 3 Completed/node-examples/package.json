@@ -1,0 +1,7 @@
+{
+  "name": "node-examples",
+  "version": "0.0.1",
+  "dependencies": {
+    "yargs": "^6.4.0"
+  }
+}
