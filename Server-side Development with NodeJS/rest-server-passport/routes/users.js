@@ -16,14 +16,53 @@ router.get('/', Verify.verifyOrdinaryUser, Verify.verifyAdmin, (req, res, next) 
   });
 });
 
+router.get('/facebook', passport.authenticate('facebook'), () => {});
+
+router.get('/facebook/callback', (req, res, next) => {
+  passport.authenticate('facebook', (err, user, info) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.status(401).json({
+        err: info
+      });
+    }
+    req.logIn(user, (err) => {
+      if (err) {
+        return res.status(500).json({
+          err: 'Could not log in user'
+        });
+      }
+      const token = Verify.getToken(user);
+      res.status(200).json({
+        status: 'Login successful!',
+        success: true,
+        token
+      });
+    });
+  })(req, res, next);
+});
+
 router.post('/register', (req, res) => {
-  User.register(new User({ username: req.body.username }), req.body.password, (err) => {
+  User.register(new User({ username: req.body.username }), req.body.password, (err, user) => {
     if (err) {
       return res.status(500).json({ err });
     }
-    passport.authenticate('local')(req, res, () =>
-      res.status(200).json({ status: 'Registration Successful!' })
-    );
+
+    if (req.body.firstname) {
+      user.firstname = req.body.firstname;
+    }
+
+    if (req.body.lastname) {
+      user.lastname = req.body.lastname;
+    }
+
+    user.save(() => {
+      passport.authenticate('local')(req, res, () => {
+        res.status(200).json({ status: 'Registration Successful!' });
+      });
+    });
   });
 });
 

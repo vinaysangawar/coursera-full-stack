@@ -15,7 +15,7 @@ exports.verifyOrdinaryUser = (req, res, next) => {
     // verifies secret and checks exp
     jwt.verify(token, config.secretKey, (err, decoded) => {
       if (err) {
-        const err = new Error('You are not authenticated!');
+        const err = new Error('You are not authenticated as a user!');
         err.status = 401;
         return next(err);
       }

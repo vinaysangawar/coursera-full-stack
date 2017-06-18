@@ -10,6 +10,7 @@
       "no-console": ["error", { "allow": ["warn", "error", "log"] }],
       "no-shadow": "off",
       "comma-dangle": "off",
-      "consistent-return": "off"
+      "consistent-return": "off",
+      "no-param-reassign": ["error", { "props": false }]
     }
 }
