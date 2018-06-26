@@ -6,10 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-
+const authenticate = require('./authenticate');
 const config = require('./config');
-const User = require('./models/user');
 
 // Mongodb connection
 mongoose.connect(config.mongoUrl);
@@ -25,8 +23,19 @@ const users = require('./routes/users');
 const dishRouter = require('./routes/dishRouter');
 const promoRouter = require('./routes/promoRouter');
 const leaderRouter = require('./routes/leaderRouter');
+const favoriteRouter = require('./routes/favoriteRouter');
 
 const app = express();
+
+// Secure traffic only
+app.all('*', (req, res, next) => {
+  console.log('req start: ', req.secure, req.hostname, req.url, app.get('port'));
+  if (req.secure) {
+    return next();
+  }
+
+  res.redirect(`https://${req.hostname}:${app.get('secPort')}${req.url}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,9 +50,6 @@ app.use(cookieParser());
 
 // Passport config
 app.use(passport.initialize());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -52,6 +58,7 @@ app.use('/users', users);
 app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/leadership', leaderRouter);
+app.use('/favorites', favoriteRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
